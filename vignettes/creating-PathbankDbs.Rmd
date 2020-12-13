@@ -1,0 +1,29 @@
+---
+title: "Provide PathbankDb databases for AnnotationHub"
+author: "Kozo Nishida"
+graphics: no
+package: AHPathbankDbs
+output:
+    BiocStyle::html_document:
+      toc_float: true
+vignette: >
+    %\VignetteIndexEntry{Provide PathbankDb databases for AnnotationHub}
+    %\VignetteEngine{knitr::rmarkdown}
+    %\VignetteEncoding{UTF-8}
+    %\VignetteDepends{AnnotationHub}
+---
+
+```{r style, echo = FALSE, results = 'asis', message=FALSE}
+BiocStyle::markdown()
+```
+
+# Creating `PathbankDb` SQLite databases
+
+```{r create-dbs, eval = FALSE}
+scr <- system.file("scripts/make-data.R", package = "AHPathbankDbs")
+source(scr)
+makePathbankSQLiteFromTables(species=c("Escherichia coli"))
+```
+
+All SQLite database, one per species, will be stored in the current working
+directory.
