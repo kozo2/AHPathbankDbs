@@ -1,0 +1,24 @@
+Package: AHPathbankDbs
+Type: Package
+Title: Metabolites and proteins linked to PathBank pathways (for AnnotationHub)
+Version: 0.99.1
+Encoding: UTF-8
+Author: Kozo Nishida
+Maintainer: Kozo Nishida <kozo.nishida@gmail.com>
+Depends: R (>= 4.0.0)
+Imports: AnnotationHub
+Suggests: BiocStyle,
+    magrittr,
+    dplyr,
+    tidyr,
+    tibble,
+    knitr
+Description: The package provides a comprehensive mapping table of 
+    metabolites and proteins linked to PathBank pathways, including
+    HMDB, KEGG, ChEBI, CAS, Drugbank, Uniprot IDs.
+VignetteBuilder: knitr
+License: Open Database License
+URL: https://github.com/biopackathon/AHPathbankDbs
+LazyData: true
+RoxygenNote: 7.0.2
+biocViews: AnnotationHub, CustomDBSchema, FunctionalAnnotation
