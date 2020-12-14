@@ -1,3 +1,5 @@
+library(readr)
+
 pathbank_species <- c("Homo sapiens", "Escherichia coli", "Mus musculus",
     "Arabidopsis thaliana", "Saccharomyces cerevisiae", "Bos taurus",
     "Caenorhabditis elegans", "Rattus norvegicus",
