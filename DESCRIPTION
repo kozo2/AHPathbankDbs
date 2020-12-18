@@ -3,23 +3,30 @@ Type: Package
 Title: Metabolites and proteins linked to PathBank pathways (for AnnotationHub)
 Version: 0.99.1
 Encoding: UTF-8
-Author: Kozo Nishida
-Maintainer: Kozo Nishida <kozo.nishida@gmail.com>
+Authors@R:
+    person(given = "Kozo",
+           family = "Nishida",
+           role = c("aut", "cre"),
+           email = "kozo.nishida@gmail.com",
+           comment = c(ORCID = "0000-0001-8501-7319"))
 Depends: R (>= 4.1.0)
-Imports: AnnotationHubData (>= 1.21.2)
+Imports: AnnotationHub (>= 2.23.0)
 Suggests: BiocStyle,
     magrittr,
     dplyr,
-    tidyr,
     tibble,
-    knitr,
-    AnnotationHub (>= 2.23.0)
+    knitr
 Description: The package provides a comprehensive mapping table of 
     metabolites and proteins linked to PathBank pathways, including
-    HMDB, KEGG, ChEBI, CAS, Drugbank, Uniprot IDs.
+    HMDB, KEGG, ChEBI, CAS, Drugbank, Uniprot IDs. The tables are provided for
+    each of the 10 species ("Homo sapiens", "Escherichia coli", "Mus musculus",
+    "Arabidopsis thaliana", "Saccharomyces cerevisiae", "Bos taurus",
+    "Caenorhabditis elegans", "Rattus norvegicus",
+    "Drosophila melanogaster", and "Pseudomonas aeruginosa").
+    These table information can be used for Metabolite Set Enrichment Analysis.
 VignetteBuilder: knitr
 License: Open Database License
 URL: https://github.com/biopackathon/AHPathbankDbs
 LazyData: true
 RoxygenNote: 7.0.2
-biocViews: DataImport, AnnotationHub, CustomDBSchema, FunctionalAnnotation
+biocViews: AnnotationHub, CustomDBSchema, FunctionalAnnotation

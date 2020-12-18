@@ -5,7 +5,7 @@ graphics: no
 package: AHPathbankDbs
 output:
     BiocStyle::html_document:
-      toc_float: true
+        toc_float: true
 vignette: >
     %\VignetteIndexEntry{Provide PathbankDb databases for AnnotationHub}
     %\VignetteEngine{knitr::rmarkdown}
