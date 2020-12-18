@@ -17,13 +17,73 @@ vignette: >
 BiocStyle::markdown()
 ```
 
-# Creating `PathbankDb` SQLite databases
+# Fetch PathBank databases from `AnnotationHub`
 
-```{r create-dbs, eval = FALSE}
-scr <- system.file("scripts/make-data.R", package = "AHPathbankDbs")
-source(scr)
-makePathbankSQLiteFromTables(species=c("Escherichia coli"))
+The `AHPathbankDbs` package provides the metadata for all PathBank tibble
+databases in `r Biocpkg("AnnotationHub")`. First we load/update the
+`AnnotationHub` resource.
+
+```{r load-lib, message = FALSE}
+library(AnnotationHub)
+ah <- AnnotationHub()
 ```
 
-All SQLite database, one per species, will be stored in the current working
+Next we list all PathBank entries from `AnnotationHub`.
+
+```{r list-pathbankdb}
+query(ah, "pathbank")
+```
+
+We query only the PathBank tibble for species *Escherichia coli*.
+
+```{r query-ecoli}
+qr <- query(ah, c("pathbank", "Escherichia coli"))
+qr
+```
+There are two types of tibble in the result, metabolites and proteins.
+Let's get a tibble of metabolites here.
+
+```{r load-ecolitbl}
+ecolitbl <- qr[[1]]
+ecolitbl
+```
+
+Each row shows information for one metabolite.
+This tibble indicates which pathway of PathBank has those metabolites.
+Each metabolite has a the name, HMDB ID, KEGG ID, ChEBI ID, DrugBank ID, CAS,
+Formula, IUPAC, SMILES, InChi, and InChI Key as well as the pathway information
+to which it belongs.
+
+To get the metabolites defined for *TCA Cycle* we can call.
+
+```{r get-metabolites4TCA}
+ecolitbl[ecolitbl$`Pathway Name`=="TCA Cycle", ]
+```
+
+# Creating PathBank tibbles
+
+This section describes the automated way to create PathBank tibble databases
+using [PathBank pathways CSV](https://pathbank.org/downloads).
+
+## Creating PathBank tibble databases
+
+To create the databases we use the `createPathbankMetabolitesDb` and
+`createPathbankProteinsDb` functions. These function downloads the "Metabolite
+names linked to PathBank pathways CSV" and "Protein names linked to PathBank
+pathways CSV". Then, those CSVs are divided into tables for each species
+and tibbleed.
+
+These functions have no parameters.
+In other words, it does not have the function of making tibble only for a
+specific species, but makes tibble for all species in PathBank CSV.
+
+```{r create-rda, eval = FALSE}
+library(AHPathbankDbs)
+scr <- system.file("scripts/make-data.R", package = "AHPathBankDbs")
+source(scr)
+createPathbankMetabolitesDb()
+createPathbankProteinsDb()
+```
+
+The each tibble is stored in the rda file and saved in the current working
 directory.
