@@ -23,7 +23,8 @@ Description: The package provides a comprehensive mapping table of
     "Arabidopsis thaliana", "Saccharomyces cerevisiae", "Bos taurus",
     "Caenorhabditis elegans", "Rattus norvegicus",
     "Drosophila melanogaster", and "Pseudomonas aeruginosa").
-    These table information can be used for Metabolite Set Enrichment Analysis.
+    These table information can be used for Metabolite Set (and other) 
+    Enrichment Analysis.
 VignetteBuilder: knitr
 License: Open Database License
 URL: https://github.com/biopackathon/AHPathbankDbs
