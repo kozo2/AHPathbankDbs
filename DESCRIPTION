@@ -26,7 +26,7 @@ Description: The package provides a comprehensive mapping table of
     These table information can be used for Metabolite Set (and other) 
     Enrichment Analysis.
 VignetteBuilder: knitr
-License: Open Database License
+License: Artistic-2.0
 URL: https://github.com/biopackathon/AHPathbankDbs
 LazyData: true
 RoxygenNote: 7.0.2
