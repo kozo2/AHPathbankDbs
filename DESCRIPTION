@@ -1,7 +1,7 @@
 Package: AHPathbankDbs
 Type: Package
 Title: Metabolites and proteins linked to PathBank pathways (for AnnotationHub)
-Version: 0.99.2
+Version: 0.99.3
 Encoding: UTF-8
 Authors@R:
     person(given = "Kozo",
