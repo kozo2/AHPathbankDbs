@@ -34,6 +34,13 @@ Next we list all PathBank entries from `AnnotationHub`.
 query(ah, "pathbank")
 ```
 
+We can confirm the metadata in AnnotationHub in Bioconductor S3 bucket
+with `mcols()`.
+
+```{r confirm-metadata}
+mcols(query(ah, "pathbank"))
+```
+
 We query only the PathBank tibble for species *Escherichia coli*.
 
 ```{r query-ecoli}
