@@ -1,7 +1,7 @@
 Package: AHPathbankDbs
 Type: Package
 Title: Metabolites and proteins linked to PathBank pathways (for AnnotationHub)
-Version: 0.99.3
+Version: 0.99.4
 Encoding: UTF-8
 Authors@R:
     person(given = "Kozo",
@@ -28,7 +28,7 @@ Description: The package provides a comprehensive mapping table of
     Enrichment Analysis.
 VignetteBuilder: knitr
 License: Artistic-2.0
-URL: https://github.com/biopackathon/AHPathbankDbs
+URL: https://github.com/kozo2/AHPathbankDbs
 LazyData: true
 RoxygenNote: 7.0.2
 biocViews: AnnotationHub, CustomDBSchema, FunctionalAnnotation
