@@ -1,7 +1,7 @@
 Package: AHPathbankDbs
 Type: Package
 Title: Metabolites and proteins linked to PathBank pathways (for AnnotationHub)
-Version: 0.99.4
+Version: 0.99.5
 Encoding: UTF-8
 Authors@R:
     person(given = "Kozo",
@@ -15,7 +15,8 @@ Suggests: BiocStyle,
     magrittr,
     dplyr,
     tibble,
-    knitr
+    knitr,
+    rmarkdown
 Description: The package provides a comprehensive mapping table of 
     metabolites and proteins linked to PathBank pathways.
     The tables include HMDB, KEGG, ChEBI, CAS, Drugbank, Uniprot IDs.
